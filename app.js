@@ -1,9 +1,13 @@
 (function() {
     var app = angular.module('beerStore', []);
 
-    app.controller('StoreController', function() {
+    app.controller('StoreController', function($scope, $http) {
         // TODO (back-front): fetch from repository
-        this.products = beers;
+        var url = "/beers";
+        $http.get( url
+        ).success(function(data){
+            console.log(data);
+        });
     });
 
     app.controller("GalleryController", function(){
