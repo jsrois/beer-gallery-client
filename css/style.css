@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #484848
+    letter-spacing: 0.3px;
+    color: #484848;
     -webkit-font-smoothing: antialiased;
     margin: 20px;
 }
@@ -45,3 +46,4 @@ h1 {
 section {
 
 }
+
