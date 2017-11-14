@@ -1,7 +1,46 @@
-.gallery-image {
-    height: 80px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #484848
+    -webkit-font-smoothing: antialiased;
 }
 
-.img-wrap {
-    border: 2px;
+h1 {
+    font-weight: bolder;
+    padding: 20px;
+    margin: 0;
+    font-variant-caps: all-petite-caps;
+}
+
+.product-name {
+    font-variant-caps: all-small-caps;
+    font-size: x-large;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-item {
+    flex-direction: column;
+    width: 50%;
+    padding: 40px;
+    margin: 20px;
+    border: 0.9px solid rgba(0,0,0,.125);
+    box-shadow: 2px 2px 15px rgba(0,0,0,.105);
+}
+
+.gallery-image {
+    height: 200px;
+    padding-bottom: 20px;
+}
+
+.product-tabs {
+    display: flex;
+}
+
+section {
+
 }
