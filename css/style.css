@@ -2,6 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #484848
     -webkit-font-smoothing: antialiased;
+    margin: 20px;
 }
 
 h1 {
@@ -12,8 +13,8 @@ h1 {
 }
 
 .product-name {
-    font-variant-caps: all-small-caps;
     font-size: x-large;
+    font-weight: 800;
 }
 
 .list-group {
