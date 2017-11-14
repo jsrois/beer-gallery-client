@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="beerStore">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="StoreController as store">
+<!--  Store Header  -->
+<header>
+    <h1 class="text-center">M&J Crafted Beers</h1>
+    <h2 class="text-center">- an Angular store -</h2>
+</header>
+
+<!--  Products Container  -->
+<div class="list-group">
+    <!--  Product Container  -->
+    <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>{{product.name}}</h3>
+        <!-- Image Gallery  -->
+        <div ng-controller="GalleryController as gallery"  ng-show="product.images.length">
+            <div>
+                <img class="gallery-image" ng-src="{{product.images[gallery.current]}}" />
+            </div>
+
+        </div>
+        <!-- Product Tabs  -->
+        <section ng-controller="TabController as tab">
+            <ul class="nav nav-pills">
+                <li ng-class="{ active:tab.isSet(1) }">
+                    <a href ng-click="tab.setTab(1)">Description</a>
+                </li>
+                <li ng-class="{ active:tab.isSet(2) }">
+                    <a href ng-click="tab.setTab(2)">Specs</a>
+                </li>
+                <li ng-class="{ active:tab.isSet(3) }">
+                    <a href ng-click="tab.setTab(3)">Reviews</a>
+                </li>
+            </ul>
+
+            <!--  Description Tab's Content  -->
+            <div ng-show="tab.isSet(1)">
+                {{product.description}}
+            </div>
+
+            <!--  Spec Tab's Content  -->
+            <div ng-show="tab.isSet(2)">
+                country: {{product.country}}
+            </div>
+
+            <!--  Review Tab's Content  -->
+            <div ng-show="tab.isSet(3)">
+                No reviews for now
+            </div>
+        </section>
+    </div>
+
+</div>
+</body>
+</html>
+
